@@ -23,6 +23,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'shopify_api'
 #OmniAuth Shopify
 gem 'omniauth-shopify-oauth2'
+#jquery-rails
+gem 'jquery-rails'
+#jquery-ui-rails
+gem 'jquery-ui-rails'
+#bootstrap
+gem 'bootstrap'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

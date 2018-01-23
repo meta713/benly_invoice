@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top: 2rem;">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Current Shop Info</h2>
+      <ul class="list-group">
+        <li class="list-group-item">shopid:<span class="float-right text-info"><%= @shop.id %></span></li>
+        <li class="list-group-item">shop_name:<span class="float-right text-info"><%= @shop.name %></span></li>
+        <li class="list-group-item">address1:<span class="float-right text-info"><%= @shop.address1 %></span></li>
+        <li class="list-group-item">address2:<span class="float-right text-info"><%= @shop.address2 %></span></li>
+        <li class="list-group-item">city:<span class="float-right text-info"><%= @shop.city %></span></li>
+        <li class="list-group-item">country:<span class="float-right text-info"><%= @shop.country %></span></li>
+        <li class="list-group-item">country_name:<span class="float-right text-info"><%= @shop.country_name %></span></li>
+        <li class="list-group-item">country_code:<span class="float-right text-info"><%= @shop.country_code %></span></li>
+        <li class="list-group-item">customer_email:<span class="float-right text-info"><%= @shop.customer_email %></span></li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <h2>Products Lists <small class="badge badge-pill badge-info"><%= @product.size %>件</small></h2>
+      <% if !@product.empty? %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ProductId</th>
+            <th>title</th>
+            <th>detail</th>
+            <th>price[¥]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @product.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= item.title %></td>
+            <td><%= item.body_html %></td>
+            <td><%= item.attributes['variants'].first.attributes['price'] %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% else %>
+      <p>None Products.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
