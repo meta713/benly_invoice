@@ -18,7 +18,7 @@
       <h2>Products Lists <small class="badge badge-pill badge-info"><%= @product.size %>件</small></h2>
       <% if !@product.empty? %>
       <table class="table table-hover">
-        <thead>
+        <thead class="thead-light">
           <tr>
             <th>ProductId</th>
             <th>title</th>
@@ -31,7 +31,7 @@
           <tr>
             <td><%= item.id %></td>
             <td><%= item.title %></td>
-            <td><%= item.body_html %></td>
+            <td><%= strip_tags item.body_html %></td>
             <td><%= item.attributes['variants'].first.attributes['price'] %></td>
           </tr>
           <% end %>
