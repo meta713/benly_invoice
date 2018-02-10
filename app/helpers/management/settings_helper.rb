@@ -1,0 +1,2 @@
+module Management::SettingsHelper
+end
