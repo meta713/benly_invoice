@@ -26,6 +26,10 @@ gem 'html2slim' #html -> slim
 gem 'shopify_api'
 gem 'omniauth-shopify-oauth2'
 
+#devise
+gem 'devise'
+gem 'omniauth-twitter'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
