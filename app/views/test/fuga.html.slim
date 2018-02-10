@@ -1,0 +1,74 @@
+.container-fluid[style="margin-top: 2rem;"]
+  .row
+    .col-md-4
+      h2
+        | Current Shop Info
+      ul.list-group
+        li.list-group-item
+          | shopid:
+          span.float-right.text-info
+            = @shop.id
+        li.list-group-item
+          | shop_name:
+          span.float-right.text-info
+            = @shop.name
+        li.list-group-item
+          | address1:
+          span.float-right.text-info
+            = @shop.address1
+        li.list-group-item
+          | address2:
+          span.float-right.text-info
+            = @shop.address2
+        li.list-group-item
+          | city:
+          span.float-right.text-info
+            = @shop.city
+        li.list-group-item
+          | country:
+          span.float-right.text-info
+            = @shop.country
+        li.list-group-item
+          | country_name:
+          span.float-right.text-info
+            = @shop.country_name
+        li.list-group-item
+          | country_code:
+          span.float-right.text-info
+            = @shop.country_code
+        li.list-group-item
+          | customer_email:
+          span.float-right.text-info
+            = @shop.customer_email
+    .col-md-8
+      h2
+        | Products Lists 
+        small.badge.badge-pill.badge-info
+          = @product.size
+          | 件
+      - if !@product.empty?
+        table.table.table-hover
+          thead.thead-light
+            tr
+              th
+                | ProductId
+              th
+                | title
+              th
+                | detail
+              th
+                | price[¥]
+          tbody
+            - @product.each do |item|
+              tr
+                td
+                  = item.id
+                td
+                  = item.title
+                td
+                  = strip_tags item.body_html
+                td
+                  = item.attributes['variants'].first.attributes['price']
+      - else
+        p
+          | None Products.

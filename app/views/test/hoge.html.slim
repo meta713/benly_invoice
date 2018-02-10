@@ -1,0 +1,11 @@
+pre
+  - @product.each do |i|
+    p
+      = i.id
+    p
+      = i.title
+    p
+      = i.body_html
+    p
+      = i.attributes['variants'].first.attributes['price']
+= @product

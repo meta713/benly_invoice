@@ -1,9 +1,0 @@
-<pre>
-<% @product.each do |i| %>
-<p><%= i.id %></p>
-<p><%= i.title %></p>
-<p><%= i.body_html %></p>
-<p><%= i.attributes['variants'].first.attributes['price'] %></p>
-<% end %>
-</pre>
-<%= @product %>
